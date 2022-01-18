@@ -1,0 +1,130 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.phone
+{
+	padding-top:70px;
+	height:650px;
+	float:right;
+	margin:10px;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.container
+{
+	margin-top:20px;
+}
+
+.right-column
+{
+	background: #fff;
+	border: 1px solid #e6e6e6;
+	width:350px;
+	margin:10px;
+	padding:40px;
+	
+}
+
+.instagram-logo
+{
+	margin:15-px auto;
+}
+
+.info
+{
+	font-weight:600px;
+	line-height:20px;
+	font-size:17px;
+	color:#999;
+}
+
+button img
+{
+	height:18 px;
+	padding:0 8px 2px;
+}
+
+.or{
+	font-size: 13px;
+	color:#999;
+	font-weight:600;
+}
+
+.or::before
+{
+	content:'';
+	background:#efefef;
+	width:110px;
+	display:block;
+	height:2px;
+	position:relative;
+	top:11px;
+}
+.or::after
+{
+	content:'';
+	background:#efefef;
+	width:110px;
+	display:block;
+	height:2px;
+	position:relative;
+	bottom:10px;
+	left:160px;	
+}
+
+.form-group
+{
+	margin-bottom:6px;
+}
+
+.form-control
+{
+	background:#fafafa;
+	border:1px solid #efefef;
+	font-size:12px;
+}
+
+::placeholder
+{
+	color:#999;
+}
+
+.btn
+{
+	margin:12px auto;
+	padding:2px;
+	font-weight:600;
+}
+
+.btn-primary
+{
+	background-color:#3897f0;
+	border:1px solid #3897f0;
+}
+
+.terms
+{
+	line-size:18px;
+	font-size:14px;
+	color:#999;
+	margin:5px 20px;
+}
+
+.right-column-login
+{
+	background: #fff;
+	border:1px solid #e6e6e6;
+	width:350px;
+	margin:10px;
+	padding:20px;
+}
+
+.right-column-login a:hover
+{
+	text-decoration:none;
+}

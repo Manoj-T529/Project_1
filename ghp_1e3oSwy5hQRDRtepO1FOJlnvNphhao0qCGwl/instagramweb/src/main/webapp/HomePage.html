@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Instagram</title>
+<link rel="stylesheet" href="HomePage.css">
+<link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png">
+
+
+<script>
+
+
+	/*function menuToggle()
+	{
+		const togglemenu=document.getElementsByClassName("menu");
+		console.log(togglemenu);
+		//toggleMenu.classList.toggle('active')
+	}*/
+
+
+
+
+	document.getElementById('search').addEventListener('keyup',function(event)
+	{
+		if(event.code === 'Enter')
+			{
+				 event.preventDefault();
+	            document.querySelector('form').submit();
+			}
+	});
+</script>
+
+</head>
+<body>
+
+	<nav class="navbar">
+		<div class="nav-wrapper">
+		<img src="https://i.imgur.com/zqpwkLQ.png" class="brand-img" alt="">
+		
+		<form action="UserController?method=search" method="post">
+		<input type="text" name="username" id="search" class="search-box" placeholder="search">
+		</form>
+		
+		<div class="nav-items">
+		<img src="https://media.istockphoto.com/vectors/icon-home-page-logo-design-universal-business-social-media-vector-id995576994?k=6&m=995576994&s=170667a&w=0&h=17JCg-MXG10bDICjyvbT6JpB0Pkh8Vx78GmVgY7HMQU=" class="icon" alt="">
+		<img src="https://i.pinimg.com/564x/81/61/11/8161118286008dc972953ec78503740b.jpg" class="icon" alt="">
+		<img src="https://icons-for-free.com/iconfiles/png/512/add+photo+plus+upload+icon-1320184027779532643.png" class="icon" alt="">
+		<img src="https://www.lamar.edu/career-and-testing-services/_files/images/icons/iconfinder_90_compass_183404.png" class="icon" alt="">
+		<img src="https://p.kindpng.com/picc/s/169-1694264_computer-icons-like-button-heart-symbol-heart-svg.png" class="icon" alt="">
+		
+
+	<!--  <div class=action>
+		<div  class="user-profile" onclick="menuToggle();">
+		
+			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPUAAADOCAMAAADR0rQ5AAAAIVBMVEXn5+f////8/Pzl5eXp6enz8/P5+fnu7u7y8vL29vbs7Ozrxq8QAAAFP0lEQVR4nO2d4ZajIAyFKwQE3/+BR7SOttVWK4Gbmu+c3fmxc3q8m3BJotLbTVEURVEURVEURVEURVEUSKj2BfBj+z/UTVxAcKILLnpjmhFjfHSh/WntXYiT3Cdi6GpfHA+t8+uK73jX1r7E3FDrN6K8wPhfSnW6te/DvAh4+zOGvlvzXfcv0MUDmhNRvLHZmzuoOeGGTV0uh5L7jpGe5uGzcW8oD7Uv/VvodnRFL4lCvZzOiBYq25Jvvs3vhGk8yfM0+sLHnvDCok05RA+yRQk/md4jRli0TxrZjCRLs98UZOs4OY4WsoluGjHlCp1f0jNGSI5nse8ZGY5mc+Z3QsTSzprfCSNgfJw5vxOxtqYP9EFps4tuGvhhGkOoBRhaxyA6BRsbjlD3wa4t6z08oW4a7LFprq7jGWgbz75XT0DXpRzb1giyn3ElOHSKsyU4dIrzJThwilu+BO9THLbz4kvwPsVri9uCGEU3DerC5lzWuAs732R0DVdb3gacZga7Y7O01jOgTfZFVXNuXLDV2UVVs4pG3bBVtar+cdXXdLNrqr5mlcKsura+DS7ZfVy008z9kMIjqI/ltKxzM9RZCuvWBbpx3bhu446gWjivnaGaGd/d6wTqsmZd2KCV2fAAEuM9TdgbPle9f33NZxXYXBzXwRNc8xToUJ97cW0b7FAz1eKwNfgI8QQ7pg+GhsHGsQ18IOP7PRMSXgagHedGHAK2GH0gt6FhW9k/eXMcfde6Q1mnCx797Yd/unw5brCfDH8gX+8lZFGP5BoSo46D16E8juakrOmJHLKF2PeS87IFiran13aQeS7QOdmyjGzBidoUvKXehk7cyE8dhzT/XuC+CbcR6GML6Ga74+H2nZUc6AE6uLrNbxzZaOlAmhsn8MynNZIx7dRtnGwXe4RuFD4PT2MQdtrTDoiC2Y64MQF9+vsVSVMf8ZVZovEpyvJ5o4Goa3vt3htj+r9jaLt3QZb1v/Hhaq1d/pBPMqQutjmilE5fSQfRSog3DSev5th2LaWuTcQBvGMFavqyMtNHwR9o12f3fBj82YpjUdmkk2iBlT+W3Kd65KePwq1f6OXUfz+62pELHn/39VTmNE9CFL7aU/rW2mMX29vg6knUmK62NSU7etj/ZmeawR/zQm8HwcYN1/tpKxv+vXvTncHN0j4du+p3FdoUPgxesCZLn6aCKX4+9qm+GW+iNvr7bwqRvXsUamJIvUaKe1+CD1U4pX5k8ztfXogwtwb2PhY+Kktf3RNdGHHx/0t9dupGKdQy3qPfJRti2y4sGuN1NuZ3Ul8xAJbG/HLmOrUtLdvx6Acwle93EvOrmdtUrdJ438x8g+nqOTnvIVfvZVcTXdy+l1Tav2wV+56p42gMD4Ifo62xfVVc1CM1lnbxQvSV8kub9RTOnZhQevuqnt+J0o9RV920ZormONcrescpWplC5Hei6Ps/deuTJQV77WpNxyvlZuQgVjZSzNBql6KPlClMLUBVtqTQ8TEou9ZEKBFsqFWdKHGeusXZtSYKdNrc529+A38TgraqE45bNmKo+ecLWHv1BLONwxn4CG8Tkv1bI3PBWo1n+apjDlircZi++hnWWRLitjXCWKmAelmCcfPC3LZG+L5pFK8En+HyMwuc4CnFWSqVeg8m7IPr9U7kBGdLccjGY4bJxWFLlDs8VSn2sua6IYC9rJmGpdD7VoJlYaMva56FjdpazzB0IDWeGD2IY3ioFt3MeOzskqrhLZzBxAm9Hh3Ifx5F1xh4OpS3nhRFURRFURRFURRFURRFkcIf/Z9LlKH9beIAAAAASUVORK5CYII=">
+		</div>
+		<div class="menu">
+		<h3><span>User Profile</span></h3>
+		<ul>
+			<li><a href="createProfile.html">View</a></li><br/>
+			<li><a href="deleteprofile.html">Delete</a></li><br/>
+			<li><a href="deleteprofile.html">Log Out</a></li><br/>
+		</ul>
+		</div>
+		</div>-->
+		
+		
+		
+	<div class="right-menu">
+		<button class="menu-button">Menu</button>
+		<div class="dropdown-menu">
+			<center>
+			<a href="createProfile.html">View</a><br/>
+			<br/>
+			<a href="deleteProfile.html">Delete</a><br/>
+			<br/>
+			<a href="deleteProfile.html">ViewAll</a><br/>
+			<br/>
+			<br/>
+			<a href="deleteProfile.html">UploadPhoto</a><br/>
+			<br/>
+			<a href="deleteProfile.html">Log Out</a><br/>
+			<br/>
+			</center>
+		</div>
+		</div>
+		
+		
+		
+		
+		</div>
+		
+		
+		</div>
+	</nav>
+	
+	<section class="main">
+		<div class="wrapper">
+			<div class="left-col">
+				<div class="status-wrapper">
+					<div class="status-card">
+						<div class="profile-pic"><img src="https://i.imgur.com/zqpwkLQ.png" alt=""></div>
+						<p class="username">User_name_123</p>
+					</div>
+					<div class="status-card">
+						<div class="profile-pic"><img src="https://i.imgur.com/zqpwkLQ.png" alt=""></div>
+						<p class="username">User_name_123</p>
+					</div>
+					<div class="status-card">
+						<div class="profile-pic"><img src="https://i.imgur.com/zqpwkLQ.png" alt=""></div>
+						<p class="username">User_name_123</p>
+					</div>
+					<div class="status-card">
+						<div class="profile-pic"><img src="https://i.imgur.com/zqpwkLQ.png" alt=""></div>
+						<p class="username">User_name_123</p>
+					</div>
+					<div class="status-card">
+						<div class="profile-pic"><img src="https://i.imgur.com/zqpwkLQ.png" alt=""></div>
+						<p class="username">User_name_123</p>
+					</div>
+					<div class="status-card">
+						<div class="profile-pic"><img src="https://i.imgur.com/zqpwkLQ.png" alt=""></div>
+						<p class="username">User_name_123</p>
+					</div>
+					<div class="status-card">
+						<div class="profile-pic"><img src="https://i.imgur.com/zqpwkLQ.png" alt=""></div>
+						<p class="username">User_name_123</p>
+					</div>
+					<div class="status-card">
+						<div class="profile-pic"><img src="https://i.imgur.com/zqpwkLQ.png" alt=""></div>
+						<p class="username">User_name_123</p>
+					</div>
+					<div class="status-card">
+						<div class="profile-pic"><img src="https://i.imgur.com/zqpwkLQ.png" alt=""></div>
+						<p class="username">User_name_123</p>
+					</div>
+					<div class="status-card">
+						<div class="profile-pic"><img src="https://i.imgur.com/zqpwkLQ.png" alt=""></div>
+						<p class="username">User_name_123</p>
+					</div>
+					<div class="status-card">
+						<div class="profile-pic"><img src="https://i.imgur.com/zqpwkLQ.png" alt=""></div>
+						<p class="username">User_name_123</p>
+					</div>
+				</div>
+				
+				<div class="post">
+               		 <div class="info">
+                    		<div class="user">
+                        		<div class="profile-pic"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt=""></div>
+                        		<p class="username">Manoj Sachin Tendulkar</p>
+                   			 </div>
+                    			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAeFBMVEX///8AAADKysrY2Nj5+fnQ0NDV1dXm5ub29vbHx8fDw8Px8fFDQ0MJCQlUVFR/f39KSkqLi4u6urp1dXVVVVWmpqbd3d2Tk5Oenp6tra0bGxttbW0zMzM+Pj4QEBBPT0+IiIgjIyO0tLRiYmIiIiIXFxc3NzcsLCzZzPGiAAAEVUlEQVR4nO3baXPaMBCAYQSBYAiEKyEXR2iO//8PG3OFYnsvnOm08z7ftWNhWVpJS6MBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAf0q/0242262rmqO2tlG7NYa8CoTsTqY36WAwHLfreZLe7egYNa3WzRpitsfDwTHkYt2zvY/JLBXc3l/6LNmvYtRp56KQrdtiyFmmNrtbFpvlRhe9yM1redQP/YGqNG/KQ74/is0m5a22VtfRh8kq+pdbtEIh70fVIdOkstlVyUg6dRfr4FSOOg+EfJBDziqmnUxu9mUUmANbatSPvjNkf6HGLP2mlN9lxz1SpXF/5Bup95aQJeNtbGmXknNSvbNF9awcbVvIwuCf29o53+KjNap93dBH/d5D8FFScnw1PXtU6w93bQ+5OW3XsbdLH+YOOp4mPRljPjlinnxRV45mXwmOtYefnqi/TCGfPSGfgu0qpuKikqRKUr1Of3MM+9zxXXjGaO7T1EHPGM0tDTEHepg/HMbph7NdklO/vZIEXqYnN+YJ/2C1a+d89V/eDR00z+rftL2Pb7rY2q1CFUm6xPDNKDlumQclpDF9OLWdv7zfS26kdrAfiPqqxHwPxMxXb2O6VmxY9++t5afeCXErz09fow1FgaGf0lgMuY6EvIkN0q8dmNLBbiiqvAy9hGJ2bdubIqWH+l6zlDT4I192yrctoc9QzZTdK9eOlC01YyEfIrN6rif30JkHHkipRGjuyjM3V3pse5ZGIE3aWQshnWnuwbARa6elWN4Ecu9ZCKkcaFX5jPZQ2UIFo0pbqODAX0afZfoj71DKlYLvMEWfRelhJMFK+UdTew8HjbdYQ2WUBucvaZQGZ5q3WHqlzjTDWFRpZASX2FH05Sv7p+APLu2fgsnX1HbUXaQcUweXZymPCG0t8h/Nv8PfUvbjxoPpc1IuGEvmUxZMaNUtcCiqfGgamzH6wU2JduDgP4fKyRN0aKpZRBuqh/COa4Jv8gWN6c7pXP4qIltg/WQ/8tVoJ6aRRXa741z5222UZ2mE0kjtwDR61hbYWg70DkbGlHrD7A+5v7XTL43PmC703VvrtRrSvXbvz7zdx9OWI+/AuYqh3KeiFKbS8X7NmbkZ76Sdk7TlMsR5wHWy+ri2UOb7Q9dKq51P7rjexdtJQ0/O92LtoGsdWhpLBD2bvT8W7f/xHv8sjf/LtRj2qjnzcCtM+P9bPU1J5mxZbAbumqiN5Wl+oCaqdGbWp+JVoK5NH1XuuraunqJU/GZdZcsTrE1UMtRIbaIyawgHy9KYmoXrS3tCmc9NrPr4XtgOv8lluVVf4+qiGuHHij4u4sXeWcVQfdFrDCYlu6nL67x7ZXXesfrgg05JgvNsKwHsbqbfP9ByNq+pVn9yezK0huM6avU785PXMZwrV35n+u0sy5q1/9+i/n9xdFs/8ccQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/LTfNsU45QIOoRYAAAAASUVORK5CYII=" class="options" alt="">
+               			 </div>
+               			 
+               			 
+               			 <img src="https://media.istockphoto.com/vectors/mini-chat-logo-bubble-and-three-dots-vector-id937216956" class="post-image" alt="">
+               			 
+               			 <div class="post-content">
+               			 
+               			 
+               			 <div class="reaction-wrapper">
+               			 		<img src="https://iconape.com/wp-content/png_logo_vector/like.png" class="icon" alt="">
+               			 		<img src="data:image/png;base64,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" class="icon" alt="">
+               			 		<img src="http://cdn.onlinewebfonts.com/svg/img_516624.png" class="icon" alt="">
+               			 		<img src="https://cdn0.iconfinder.com/data/icons/social-media-logo-4/32/Social_Media_instagram_save_save_instagram-512.png" class="save icon" alt="">
+               			 </div>
+               			 
+               			 
+               			 <p class="likes">3 likes</p>
+               			 
+               			 <p class="description"><span>username</span>Im good</p>
+               			 
+               			 <p class="post-time">3 mins</p>
+               			 
+               			 </div>
+               			 
+               			 
+               			 <div class="comment-wrapper">
+               			 		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0mSfV3EaneRF37WFsIMnf0ScbxXhwEZByUg&usqp=CAU" class="icon" alt="">
+               			 		<input type="text" name="comment" class="comment-box" placeholder="Add a comment">
+               			 		<button class="comment-btn">Post</button>
+               			 </div>
+               			 
+               			 
+                </div>
+				
+			</div>
+			
+			
+			<div class="right-col">
+				<div class="profile-card">
+					<div class="profile-pic">
+						<img src="https://i.imgur.com/zqpwkLQ.png"  alt="">
+					</div>
+					
+					<div>
+					<p class="username">Manoj T</p>
+					<p class="sub-text">Soft Dev</p>
+					</div>
+					
+					
+					<button class="action-btn">switch</button>
+					</div>
+					
+					<p class="suggestion-text">Suggestions for you</p>
+            			<div class="profile-card">
+                			<div class="profile-pic">
+                    			<img src="https://i.imgur.com/zqpwkLQ.png" alt="">
+               				 </div>
+              			  <div>
+                 			   <p class="username">Manoj T</p>
+                  			   <p class="sub-text">followed by Sasi</p>
+              			  </div>
+                			<button class="action-btn">follow</button>
+            
+            		</div>
+					
+		
+				
+			</div>
+		</div>
+	
+	</section>
+
+
+</body>
+</html>

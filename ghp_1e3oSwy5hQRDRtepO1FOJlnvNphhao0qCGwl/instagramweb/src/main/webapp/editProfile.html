@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Editing</title>
+
+
+<link rel="stylesheet" href="editProfile.css">
+<link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png">
+
+<script>
+
+/*function loadViewData(){
+	fetch('UserServlet?method=editProfile')
+	 .then(response => response.json())
+	 .then(data => {
+	 console.log(data);
+	
+ 	 document.getElementById('name').innerHTML="<b>"+data.fullname+"</b>";
+ 	 document.getElementById('username').innerHTML="<b>"+data.username+"</b>";
+ 	 document.getElementById('gender').innerHTML="<b>"+data.gender+"</b>";
+ 	 document.getElementById('phno').innerHTML="<b>"+data.mobile+"</b>";
+ 	
+	 });
+	}*/
+
+</script>
+
+<script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    
+    <script>
+      $("#myPost").on("submit", function (event) {
+        event.preventDefault();
+        let f = new FormData(this);
+
+        $.ajax({
+          url: "UserController",
+          data: f,
+          type: "POST",
+          success: function (data, textStatus, jqXHR) {
+            // location.href = "./profile.html";
+            /* $("#updateMessage").html("Profile Updated"); */
+          },
+          error: function (j1XHR, textStatus, errorThrown) {
+            console.log("error");
+          /*   $("#updateMessage").html("some error occured"); */
+          },
+          processData: false,
+          contentType: false,
+        });
+      });
+    </script>
+
+</head>
+<body onload="loadViewData">
+
+	<div class="edit-menu-container">
+	
+	<ul>
+		<li class="edit-icon"><a><i class="fas fa-times"></i></a></li>
+		<li class="edit-name"><a>Edit Profile</a></li>
+		<li class="edit-icon"><a style="color:#3897f0;"><i class="fas fa-check"></i></a></li>
+	
+	</ul>
+	</div>
+	
+	<div class="edit-main-container">
+	
+	<form action="UserController?method=editProfile" method="post" id="myPost">
+	
+	<div class="edit-image-container">
+		
+			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPUAAADOCAMAAADR0rQ5AAAAIVBMVEXn5+f////8/Pzl5eXp6enz8/P5+fnu7u7y8vL29vbs7Ozrxq8QAAAFP0lEQVR4nO2d4ZajIAyFKwQE3/+BR7SOttVWK4Gbmu+c3fmxc3q8m3BJotLbTVEURVEURVEURVEURVEUSKj2BfBj+z/UTVxAcKILLnpjmhFjfHSh/WntXYiT3Cdi6GpfHA+t8+uK73jX1r7E3FDrN6K8wPhfSnW6te/DvAh4+zOGvlvzXfcv0MUDmhNRvLHZmzuoOeGGTV0uh5L7jpGe5uGzcW8oD7Uv/VvodnRFL4lCvZzOiBYq25Jvvs3vhGk8yfM0+sLHnvDCok05RA+yRQk/md4jRli0TxrZjCRLs98UZOs4OY4WsoluGjHlCp1f0jNGSI5nse8ZGY5mc+Z3QsTSzprfCSNgfJw5vxOxtqYP9EFps4tuGvhhGkOoBRhaxyA6BRsbjlD3wa4t6z08oW4a7LFprq7jGWgbz75XT0DXpRzb1giyn3ElOHSKsyU4dIrzJThwilu+BO9THLbz4kvwPsVri9uCGEU3DerC5lzWuAs732R0DVdb3gacZga7Y7O01jOgTfZFVXNuXLDV2UVVs4pG3bBVtar+cdXXdLNrqr5mlcKsura+DS7ZfVy008z9kMIjqI/ltKxzM9RZCuvWBbpx3bhu446gWjivnaGaGd/d6wTqsmZd2KCV2fAAEuM9TdgbPle9f33NZxXYXBzXwRNc8xToUJ97cW0b7FAz1eKwNfgI8QQ7pg+GhsHGsQ18IOP7PRMSXgagHedGHAK2GH0gt6FhW9k/eXMcfde6Q1mnCx797Yd/unw5brCfDH8gX+8lZFGP5BoSo46D16E8juakrOmJHLKF2PeS87IFiran13aQeS7QOdmyjGzBidoUvKXehk7cyE8dhzT/XuC+CbcR6GML6Ga74+H2nZUc6AE6uLrNbxzZaOlAmhsn8MynNZIx7dRtnGwXe4RuFD4PT2MQdtrTDoiC2Y64MQF9+vsVSVMf8ZVZovEpyvJ5o4Goa3vt3htj+r9jaLt3QZb1v/Hhaq1d/pBPMqQutjmilE5fSQfRSog3DSev5th2LaWuTcQBvGMFavqyMtNHwR9o12f3fBj82YpjUdmkk2iBlT+W3Kd65KePwq1f6OXUfz+62pELHn/39VTmNE9CFL7aU/rW2mMX29vg6knUmK62NSU7etj/ZmeawR/zQm8HwcYN1/tpKxv+vXvTncHN0j4du+p3FdoUPgxesCZLn6aCKX4+9qm+GW+iNvr7bwqRvXsUamJIvUaKe1+CD1U4pX5k8ztfXogwtwb2PhY+Kktf3RNdGHHx/0t9dupGKdQy3qPfJRti2y4sGuN1NuZ3Ul8xAJbG/HLmOrUtLdvx6Acwle93EvOrmdtUrdJ438x8g+nqOTnvIVfvZVcTXdy+l1Tav2wV+56p42gMD4Ifo62xfVVc1CM1lnbxQvSV8kub9RTOnZhQevuqnt+J0o9RV920ZormONcrescpWplC5Hei6Ps/deuTJQV77WpNxyvlZuQgVjZSzNBql6KPlClMLUBVtqTQ8TEou9ZEKBFsqFWdKHGeusXZtSYKdNrc529+A38TgraqE45bNmKo+ecLWHv1BLONwxn4CG8Tkv1bI3PBWo1n+apjDlircZi++hnWWRLitjXCWKmAelmCcfPC3LZG+L5pFK8En+HyMwuc4CnFWSqVeg8m7IPr9U7kBGdLccjGY4bJxWFLlDs8VSn2sua6IYC9rJmGpdD7VoJlYaMva56FjdpazzB0IDWeGD2IY3ioFt3MeOzskqrhLZzBxAm9Hh3Ifx5F1xh4OpS3nhRFURRFURRFURRFURRFkcIf/Z9LlKH9beIAAAAASUVORK5CYII="/>
+	
+	<button>Choose Photo
+		
+			<span>
+				<input type="file" name="file">
+			</span>
+	</button>
+	</div>
+	
+	<div class="edit-profile-detail-container">
+	
+		<label>Name</label>
+			<input type="text" name="name" placeholder="Name">
+		<label>Username</label>
+			<input type="text" name="username" placeholder="UserName">
+		<label>Gender</label>
+			<input type="text" name="gender" placeholder="Gender">
+		<label>Mobile Number</label>
+			<input type="number" name="phno" placeholder="Mobile Number">
+		<input type="submit">
+		
+		
+	</div>
+	
+	
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Creating</title>
+
+<link rel="stylesheet" href="createProfile.css">
+<link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png">
+<script>
+
+/*function loadViewData(){
+	fetch('UserController?method=viewProfile')
+	 .then(response => response.json())
+	 .then(data => {
+	 console.log(data.username);
+	// console.log(manoj);
+	 document.getElementById('name').innerHTML="<b>"+data.username+"</b>";
+	 
+	 });
+	}*/
+
+
+
+</script>
+</head>
+<body onload="loadViewData">
+
+<header>
+
+	<div class="container">
+
+		<div class="profile">
+
+			<div class="profile-image">
+
+				<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPUAAADOCAMAAADR0rQ5AAAAIVBMVEXn5+f////8/Pzl5eXp6enz8/P5+fnu7u7y8vL29vbs7Ozrxq8QAAAFP0lEQVR4nO2d4ZajIAyFKwQE3/+BR7SOttVWK4Gbmu+c3fmxc3q8m3BJotLbTVEURVEURVEURVEURVEUSKj2BfBj+z/UTVxAcKILLnpjmhFjfHSh/WntXYiT3Cdi6GpfHA+t8+uK73jX1r7E3FDrN6K8wPhfSnW6te/DvAh4+zOGvlvzXfcv0MUDmhNRvLHZmzuoOeGGTV0uh5L7jpGe5uGzcW8oD7Uv/VvodnRFL4lCvZzOiBYq25Jvvs3vhGk8yfM0+sLHnvDCok05RA+yRQk/md4jRli0TxrZjCRLs98UZOs4OY4WsoluGjHlCp1f0jNGSI5nse8ZGY5mc+Z3QsTSzprfCSNgfJw5vxOxtqYP9EFps4tuGvhhGkOoBRhaxyA6BRsbjlD3wa4t6z08oW4a7LFprq7jGWgbz75XT0DXpRzb1giyn3ElOHSKsyU4dIrzJThwilu+BO9THLbz4kvwPsVri9uCGEU3DerC5lzWuAs732R0DVdb3gacZga7Y7O01jOgTfZFVXNuXLDV2UVVs4pG3bBVtar+cdXXdLNrqr5mlcKsura+DS7ZfVy008z9kMIjqI/ltKxzM9RZCuvWBbpx3bhu446gWjivnaGaGd/d6wTqsmZd2KCV2fAAEuM9TdgbPle9f33NZxXYXBzXwRNc8xToUJ97cW0b7FAz1eKwNfgI8QQ7pg+GhsHGsQ18IOP7PRMSXgagHedGHAK2GH0gt6FhW9k/eXMcfde6Q1mnCx797Yd/unw5brCfDH8gX+8lZFGP5BoSo46D16E8juakrOmJHLKF2PeS87IFiran13aQeS7QOdmyjGzBidoUvKXehk7cyE8dhzT/XuC+CbcR6GML6Ga74+H2nZUc6AE6uLrNbxzZaOlAmhsn8MynNZIx7dRtnGwXe4RuFD4PT2MQdtrTDoiC2Y64MQF9+vsVSVMf8ZVZovEpyvJ5o4Goa3vt3htj+r9jaLt3QZb1v/Hhaq1d/pBPMqQutjmilE5fSQfRSog3DSev5th2LaWuTcQBvGMFavqyMtNHwR9o12f3fBj82YpjUdmkk2iBlT+W3Kd65KePwq1f6OXUfz+62pELHn/39VTmNE9CFL7aU/rW2mMX29vg6knUmK62NSU7etj/ZmeawR/zQm8HwcYN1/tpKxv+vXvTncHN0j4du+p3FdoUPgxesCZLn6aCKX4+9qm+GW+iNvr7bwqRvXsUamJIvUaKe1+CD1U4pX5k8ztfXogwtwb2PhY+Kktf3RNdGHHx/0t9dupGKdQy3qPfJRti2y4sGuN1NuZ3Ul8xAJbG/HLmOrUtLdvx6Acwle93EvOrmdtUrdJ438x8g+nqOTnvIVfvZVcTXdy+l1Tav2wV+56p42gMD4Ifo62xfVVc1CM1lnbxQvSV8kub9RTOnZhQevuqnt+J0o9RV920ZormONcrescpWplC5Hei6Ps/deuTJQV77WpNxyvlZuQgVjZSzNBql6KPlClMLUBVtqTQ8TEou9ZEKBFsqFWdKHGeusXZtSYKdNrc529+A38TgraqE45bNmKo+ecLWHv1BLONwxn4CG8Tkv1bI3PBWo1n+apjDlircZi++hnWWRLitjXCWKmAelmCcfPC3LZG+L5pFK8En+HyMwuc4CnFWSqVeg8m7IPr9U7kBGdLccjGY4bJxWFLlDs8VSn2sua6IYC9rJmGpdD7VoJlYaMva56FjdpazzB0IDWeGD2IY3ioFt3MeOzskqrhLZzBxAm9Hh3Ifx5F1xh4OpS3nhRFURRFURRFURRFURRFkcIf/Z9LlKH9beIAAAAASUVORK5CYII=" alt="">
+
+			</div>
+
+			<div class="profile-user-settings">
+			
+			<form action="UserController?method=viewProfile" method="post">
+
+				<h1 class="profile-user-name" id="name"></h1>
+		
+			</form>
+			
+				<a href="editProfile.html">
+				<button  class="btn profile-edit-btn">Edit Profile</button>
+				</a>
+				<button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+
+			</div>
+
+			<div class="profile-stats">
+
+				<ul>
+					<li><span class="profile-stat-count">0</span> posts</li>
+					<li><span class="profile-stat-count">0</span> followers</li>
+					<li><span class="profile-stat-count">0</span> following</li>
+				</ul>
+
+			</div>
+
+			<div class="profile-bio">
+
+				<p><span class="profile-real-name">hey there!</span> Im Great</p>
+
+			</div>
+
+		</div>
+		<!-- End of profile section -->
+
+	</div>
+	<!-- End of container -->
+
+</header>
+<!--  
+<main>
+
+	<div class="container">
+
+		<div class="gallery">
+
+			<div class="gallery-item" tabindex="0">
+
+				<img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" class="gallery-image" alt="">
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 56</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="gallery-item" tabindex="0">
+
+				<img src="https://images.unsplash.com/photo-1497445462247-4330a224fdb1?w=500&h=500&fit=crop" class="gallery-image" alt="">
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 89</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 5</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="gallery-item" tabindex="0">
+
+				<img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500&h=500&fit=crop" class="gallery-image" alt="">
+
+				<div class="gallery-item-type">
+
+					<span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
+
+				</div>
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 42</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 1</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="gallery-item" tabindex="0">
+
+				<img src="https://images.unsplash.com/photo-1502630859934-b3b41d18206c?w=500&h=500&fit=crop" class="gallery-image" alt="">
+
+				<div class="gallery-item-type">
+
+					<span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
+
+				</div>
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 38</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 0</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="gallery-item" tabindex="0">
+
+				<img src="https://images.unsplash.com/photo-1498471731312-b6d2b8280c61?w=500&h=500&fit=crop" class="gallery-image" alt="">
+
+				<div class="gallery-item-type">
+
+					<span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
+
+				</div>
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 47</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 1</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="gallery-item" tabindex="0">
+
+				<img src="https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=500&h=500&fit=crop" class="gallery-image" alt="">
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 94</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 3</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="gallery-item" tabindex="0">
+
+				<img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=500&h=500&fit=crop" class="gallery-image" alt="">
+
+				<div class="gallery-item-type">
+
+					<span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
+
+				</div>
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 52</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 4</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="gallery-item" tabindex="0">
+
+				<img src="https://images.unsplash.com/photo-1515814472071-4d632dbc5d4a?w=500&h=500&fit=crop" class="gallery-image" alt="">
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 66</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="gallery-item" tabindex="0">
+
+				<img src="https://images.unsplash.com/photo-1511407397940-d57f68e81203?w=500&h=500&fit=crop" class="gallery-image" alt="">
+
+				<div class="gallery-item-type">
+
+					<span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
+
+				</div>
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 45</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 0</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="gallery-item" tabindex="0">
+
+				<img src="https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?w=500&h=500&fit=crop" class="gallery-image" alt="">
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 34</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 1</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="gallery-item" tabindex="0">
+
+				<img src="https://images.unsplash.com/photo-1505058707965-09a4469a87e4?w=500&h=500&fit=crop" class="gallery-image" alt="">
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 41</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 0</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="gallery-item" tabindex="0">
+
+				<img src="https://images.unsplash.com/photo-1423012373122-fff0a5d28cc9?w=500&h=500&fit=crop" class="gallery-image" alt="">
+
+				<div class="gallery-item-type">
+
+					<span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
+
+				</div>
+
+				<div class="gallery-item-info">
+
+					<ul>
+						<li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> 30</li>
+						<li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> 2</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+		</div>-->
+		<!-- End of gallery -->
+
+		<div class="loader"></div>
+
+	</div>
+	<!-- End of container -->
+
+</main>
+
+
+
+
+</body>
+</html>
